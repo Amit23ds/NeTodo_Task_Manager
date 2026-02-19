@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder App</title>
+    <style>
+        body {
+            background-image: url(https://cdn.pixabay.com/photo/2020/03/12/22/26/drops-4926381_640.jpg);
+          
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #reminder-form {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        
+
+  
+
+
+    </style>
+</head>
+
+
+<body>
+    
+
+<div id="reminder-form">
+    <h2>Set a Reminder</h2>
+    <label for="reminderText">Reminder:</label>
+    <input type="text" id="reminderText" placeholder="Enter your reminder">
+
+    <label for="reminderTime">Time:</label>
+    <input type="datetime-local" id="reminderTime">
+
+    <button onclick="setReminder()">Set Reminder</button>
+</div>
+
+<script>
+    function setReminder() {
+        
+        var reminderText = document.getElementById('reminderText').value;
+        var reminderTime = document.getElementById('reminderTime').value;
+
+      
+        if (reminderText.trim() === '' || reminderTime === '') {
+            alert('Please enter both reminder text and time.');
+            return;
+        }
+
+        var currentTime = new Date().getTime();
+        var selectedTime = new Date(reminderTime).getTime();
+
+        var timeoutDuration = selectedTime - currentTime;
+
+        if (timeoutDuration < 0) {
+            alert('Please select a future time for the reminder.');
+            return;
+        }
+
+        setTimeout(function () {
+            alert('Reminder: ' + reminderText);
+        }, timeoutDuration);
+    }
+</script>
+
+</body>
+</html>

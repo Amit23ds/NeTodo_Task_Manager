@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://img.freepik.com/free-photo/clipboard-icon-front-side-white-background_187299-40139.jpg?w=740&t=st=1702295831~exp=1702296431~hmac=5c946c0913feb11f85567565efc8c69a5a16280945b3612e40cfcd870cfe1c24" rel="icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <title>Neatodo</title>
+</head>
+
+<body>
+  <h1 id="main-heading"> Neatodo <i class="fa fa-calendar" aria-hidden="true"></i></h1>
+  <p class ="" id="datetime"></p>
+            </div>
+
+  <div class="grid-container">
+  <div class="input-container">
+    <input id="todo-input" type="text" placeholder="Enter Your Task Here...!">
+
+    <input id="todo-date" type="date">
+
+    <select id="todo-priority">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+
+    <button id="add-todo" onclick="addTodo();">Add</button>
+  </div>
+  </div>
+
+  <div class="filter-container">
+    <label for="status-filter">Filter by Status:</label>
+    <select id="status-filter" onchange="filterTasks();">
+      <option value="All">All</option>
+      <option value="Pending">Pending</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+
+  <div class="containerElement"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
